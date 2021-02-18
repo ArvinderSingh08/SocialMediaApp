@@ -31,15 +31,15 @@ app.use(require('./routes/user'))
 
 if(process.env.NODE_ENV=="production")
 {
-    app.use(epress.static('client/build'))
+    app.use(express.static('client/build'))
     const path=require('path')
     app.get("*",(req,res)=>
     {
-        res.sendFile(path.path.resolve(__dirname,'client','build','index.html'))
+        res.sendFile(path.resolve(__dirname,'client','build','index.html'))
     })
 }
 
 app.listen(PORT,()=>
 {
-    console.log("server is running on 5000")
+    console.log("server is running on ",PORT)
 })
