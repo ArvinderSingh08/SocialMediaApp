@@ -1,6 +1,8 @@
 import React ,{useContext}from 'react'
 import {Link, useHistory} from 'react-router-dom';
 import { UserContext } from "../App";
+import M from 'materialize-css'
+import '../../src/App.css'
 
 const Navbar=()=>
 {
@@ -36,7 +38,7 @@ const Navbar=()=>
     return(
         <nav>
             <div className="nav-wrapper white">
-                <Link to={state?"/":"/login" }className="brand-logo">Social Shout</Link>
+                <Link to={state?"/":"/login" } className="brand-logo left">Social Shout</Link>
                 <ul id="nav-mobile" className="right">
                     {renderList()}
                 </ul>

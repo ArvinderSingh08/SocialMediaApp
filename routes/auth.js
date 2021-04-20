@@ -9,10 +9,6 @@ const {JWT_SECRET} =require('../config/keys')
 
 const requireLogin=require('../middleware/requireLogin')
 
-// router.get('/protected', requireLogin,(req,res)=>
-// {
-//     res.send("HELLO PROTECTED")
-// })
 
 router.post('/signup',(req,res)=>
 {
@@ -22,7 +18,7 @@ router.post('/signup',(req,res)=>
     {
         return res.status(422).json({error:"please add all the fields"})
     }
-    res.json({message:"successfully posted"})
+    res.json({message:"successfully created"})
     User.findOne({email:email}).then((savedUser)=>
     {
         if(savedUser)
